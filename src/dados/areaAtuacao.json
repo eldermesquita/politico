@@ -1,0 +1,421 @@
+[
+  {
+    "id": 1,
+    "titulo": "CRIMINALISTA",
+    "icone": "fi fi-sr-scale",
+    "exibir": true,
+    "descricao": "Defesa em processos criminais, inquéritos, audiências, habeas corpus e recursos, garantindo os direitos do cliente.",
+    "servicos": [
+      {
+        "id": 101,
+        "nome": "Plantão 24h em delegacia",
+        "descricao": "Atendimento emergencial em delegacias para acompanhamento de ocorrências e prisões.",
+        "icone": "local_police",
+        "exibir": true,
+        "tempo_resposta": "Imediato",
+        "advogados": [
+          1
+        ]
+      },
+      {
+        "id": 102,
+        "nome": "Prisões em Flagrante",
+        "descricao": "Defesa imediata em casos de prisão em flagrante, garantindo os direitos do acusado.",
+        "icone": "gavel",
+        "exibir": true,
+        "tempo_resposta": "Imediato",
+        "advogados": [
+          1
+        ]
+      },
+      {
+        "id": 103,
+        "nome": "Inquérito Policial",
+        "descricao": "Acompanhamento jurídico durante a fase investigativa do inquérito policial.",
+        "icone": "description",
+        "exibir": true,
+        "tempo_resposta": "Até 24h",
+        "advogados": [
+          1
+        ]
+      },
+      {
+        "id": 104,
+        "nome": "Audiência de Custódia",
+        "descricao": "Defesa técnica em audiência de custódia para análise da legalidade da prisão.",
+        "icone": "balance",
+        "exibir": true,
+        "tempo_resposta": "Imediato",
+        "advogados": [
+          1
+        ]
+      },
+      {
+        "id": 105,
+        "nome": "Liberdade Provisória",
+        "descricao": "Pedido judicial para concessão de liberdade provisória.",
+        "icone": "lock_open",
+        "exibir": true,
+        "tempo_resposta": "Até 12h",
+        "advogados": [
+          1
+        ]
+      },
+      {
+        "id": 106,
+        "nome": "Revogação de Prisão Preventiva",
+        "descricao": "Pedido judicial para revogação da prisão preventiva.",
+        "icone": "verified_user",
+        "exibir": true,
+        "tempo_resposta": "Até 24h",
+        "advogados": [
+          1
+        ]
+      },
+      {
+        "id": 107,
+        "nome": "Acompanhamento e defesa processual",
+        "descricao": "Defesa completa durante todo o processo criminal.",
+        "icone": "assignment",
+        "exibir": true,
+        "tempo_resposta": "Até 24h",
+        "advogados": [
+          1
+        ]
+      },
+      {
+        "id": 108,
+        "nome": "Habeas Corpus ao TJ, STJ e STF",
+        "descricao": "Impetramos habeas corpus para garantir a liberdade do cliente nos tribunais.",
+        "icone": "account_balance",
+        "exibir": true,
+        "tempo_resposta": "Imediato",
+        "advogados": [
+          1
+        ]
+      },
+      {
+        "id": 109,
+        "nome": "Revisão Criminal",
+        "descricao": "Análise de sentença condenatória para buscar revisão judicial.",
+        "icone": "find_replace",
+        "exibir": true,
+        "tempo_resposta": "Até 48h",
+        "advogados": [
+          1
+        ]
+      },
+      {
+        "id": 110,
+        "nome": "Pedido de Prisão Domiciliar",
+        "descricao": "Solicitação judicial para cumprimento da pena em residência.",
+        "icone": "home",
+        "exibir": true,
+        "tempo_resposta": "Até 24h",
+        "advogados": [
+          1
+        ]
+      },
+      {
+        "id": 111,
+        "nome": "Progressão de Regime",
+        "descricao": "Pedido de mudança para regime prisional mais brando.",
+        "icone": "trending_up",
+        "exibir": true,
+        "tempo_resposta": "Até 48h",
+        "advogados": [
+          1
+        ]
+      },
+      {
+        "id": 112,
+        "nome": "Remição de Pena",
+        "descricao": "Redução da pena por estudo ou trabalho do apenado.",
+        "icone": "timer",
+        "exibir": true,
+        "tempo_resposta": "Até 48h",
+        "advogados": [
+          1
+        ]
+      },
+      {
+        "id": 113,
+        "nome": "Livramento Condicional",
+        "descricao": "Pedido judicial para concessão de liberdade condicional.",
+        "icone": "how_to_reg",
+        "exibir": true,
+        "tempo_resposta": "Até 48h",
+        "advogados": [
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "titulo": "PREVIDENCIÁRIO",
+    "icone": "fi fi-sr-home-heart",
+    "exibir": true,
+    "descricao": "Atuação em aposentadorias, benefícios do INSS, divórcios, guarda, pensão, inventários e questões familiares.",
+    "servicos": [
+      {
+        "id": 201,
+        "nome": "Aposentadoria",
+        "descricao": "Planejamento e requerimento de aposentadoria no INSS.",
+        "icone": "elderly",
+        "exibir": true,
+        "tempo_resposta": "Até 48h",
+        "advogados": [
+          5
+        ]
+      },
+      {
+        "id": 202,
+        "nome": "Auxílio-doença",
+        "descricao": "Solicitação e acompanhamento de benefício por incapacidade temporária.",
+        "icone": "file-medical",
+        "exibir": true,
+        "tempo_resposta": "Até 48h",
+        "advogados": [
+          5
+        ]
+      },
+      {
+        "id": 203,
+        "nome": "Aposentadoria por invalidez",
+        "descricao": "Atuação para concessão de benefício por incapacidade permanente.",
+        "icone": "wheelchair",
+        "exibir": true,
+        "tempo_resposta": "Até 48h",
+        "advogados": [
+          5
+        ]
+      },
+      {
+        "id": 204,
+        "nome": "Pensão por morte",
+        "descricao": "Solicitação de benefício para dependentes do segurado falecido.",
+        "icone": "hands-holding-heart",
+        "exibir": true,
+        "tempo_resposta": "Até 48h",
+        "advogados": [
+          5
+        ]
+      },
+      {
+        "id": 205,
+        "nome": "Revisão de benefício",
+        "descricao": "Análise e correção de valores pagos pelo INSS.",
+        "icone": "search-dollar",
+        "exibir": true,
+        "tempo_resposta": "Até 72h",
+        "advogados": [
+          5
+        ]
+      },
+      {
+        "id": 206,
+        "nome": "Planejamento previdenciário",
+        "descricao": "Estratégia para obter o melhor benefício no futuro.",
+        "icone": "chart-line",
+        "exibir": true,
+        "tempo_resposta": "Até 72h",
+        "advogados": [
+          5
+        ]
+      },
+      {
+        "id": 207,
+        "nome": "LOAS/BPC",
+        "descricao": "Solicitação do benefício assistencial para idosos e pessoas com deficiência.",
+        "icone": "hand-holding-usd",
+        "exibir": true,
+        "tempo_resposta": "Até 48h",
+        "advogados": [
+          5
+        ]
+      },
+      {
+        "id": 208,
+        "nome": "Recurso no INSS",
+        "descricao": "Defesa administrativa contra negativas de benefícios.",
+        "icone": "gavel",
+        "exibir": true,
+        "tempo_resposta": "Até 72h",
+        "advogados": [
+          5
+        ]
+      },
+      {
+        "id": 209,
+        "nome": "Ação judicial previdenciária",
+        "descricao": "Processos judiciais contra o INSS para concessão ou revisão de benefícios.",
+        "icone": "balance-scale",
+        "exibir": true,
+        "tempo_resposta": "Até 72h",
+        "advogados": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "titulo": "TRABALHISTA",
+    "icone": "fi fi-sr-briefcase",
+    "exibir": true,
+    "descricao": "Defesa em reclamações trabalhistas, rescisões, verbas, assédio, horas extras e acordos judiciais.",
+    "servicos": [
+      {
+        "id": 301,
+        "nome": "Reclamação Trabalhista",
+        "descricao": "Ação judicial para cobrança de direitos trabalhistas.",
+        "icone": "description",
+        "exibir": true,
+        "tempo_resposta": "Até 24h",
+        "advogados": [
+          3
+        ]
+      },
+      {
+        "id": 302,
+        "nome": "Horas Extras",
+        "descricao": "Cobrança judicial de horas extras não pagas.",
+        "icone": "schedule",
+        "exibir": true,
+        "tempo_resposta": "Até 24h",
+        "advogados": [
+          3
+        ]
+      },
+      {
+        "id": 303,
+        "nome": "Rescisão Trabalhista",
+        "descricao": "Análise e defesa em rescisões contratuais.",
+        "icone": "assignment_turned_in",
+        "exibir": true,
+        "tempo_resposta": "Até 24h",
+        "advogados": [
+          3
+        ]
+      },
+      {
+        "id": 403,
+        "nome": "Assédio moral",
+        "descricao": "Atuação em casos de assédio no ambiente de trabalho.",
+        "icone": "exclamation-triangle",
+        "exibir": true,
+        "tempo_resposta": "Até 72h",
+        "advogados": [
+         3
+        ]
+      },
+      {
+        "id": 404,
+        "nome": "Vínculo empregatício",
+        "descricao": "Reconhecimento de vínculo de trabalho não registrado.",
+        "icone": "user-check",
+        "exibir": true,
+        "tempo_resposta": "Até 72h",
+        "advogados": [
+         3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "titulo": "CIVIL / FAMÍLIA",
+    "icone": "fi fi-sr-document",
+    "exibir": true,
+    "descricao": "Atuação em indenizações, contratos, cobranças e defesa do consumidor em casos de falhas e abusos.",
+    "servicos": [
+      {
+        "id": 401,
+        "nome": "Indenização por Danos Morais",
+        "descricao": "Ações judiciais para reparação de danos morais.",
+        "icone": "gavel",
+        "exibir": true,
+        "tempo_resposta": "Até 24h",
+        "advogados": [
+          6
+        ]
+      },
+      {
+        "id": 202,
+        "nome": "Reconhecimento de paternidade ou maternidade socioafetiva ",
+        "descricao": "Afeto e na convivência, sem laços de sangue, com os mesmos efeitos legais da biológica.",
+        "icone": "family_restroom",
+        "exibir": true,
+        "tempo_resposta": "Até 48h",
+        "advogados": [
+        6
+        ]
+      },
+      {
+        "id": 200,
+        "nome": "Inventário",
+        "descricao": "Atuamos diretamente com a família para que haja correta administração e distribuição dos bens deixados por um ente querido.",
+        "icone": "family_restroom",
+        "exibir": true,
+        "tempo_resposta": "Até 48h",
+        "advogados": [
+          6
+        ]
+      },
+      {
+        "id": 203,
+        "nome": "Divórcio",
+        "descricao": "Divórcio judicial ou extrajudicial com segurança jurídica.",
+        "icone": "heart_broken",
+        "exibir": true,
+        "tempo_resposta": "Até 24h",
+        "advogados": [
+          6
+        ]
+      },
+      {
+        "id": 204,
+        "nome": "Usucapião",
+        "descricao": "A Usucapião permite que você reivindique a posse de um imóvel após uso contínuo, mesmo sem escritura formal.",
+        "icone": "heart_broken",
+        "exibir": true,
+        "tempo_resposta": "Até 24h",
+        "advogados": [
+         6
+        ]
+      },
+      {
+        "id": 204,
+        "nome": "Pensão Alimentícia",
+        "descricao": "Ações de fixação, revisão ou cobrança de pensão alimentícia.",
+        "icone": "restaurant",
+        "exibir": true,
+        "tempo_resposta": "Até 24h",
+        "advogados": [
+         6
+        ]
+      },{
+        "id": 303,
+        "nome": "Guarda de filhos",
+        "descricao": "Regulamentação de guarda e convivência familiar.",
+        "icone": "child",
+        "exibir": true,
+        "tempo_resposta": "Até 48h",
+        "advogados": [
+         6
+        ]
+      },{
+        "id": 305,
+        "nome": "Reconhecimento de união estável",
+        "descricao": "Formalização e dissolução de união estável.",
+        "icone": "ring",
+        "exibir": true,
+        "tempo_resposta": "Até 72h",
+        "advogados": [
+         6
+        ]
+      }
+    ]
+  }
+]
