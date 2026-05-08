@@ -1,8 +1,8 @@
 
-const SITE_NAME = 'Victor Carvalho Advocacia'
+const SITE_NAME = 'Bruno Dantas'
 const SITE_URL = 'http://localhost:5173'
 const DEFAULT_IMAGE = `/src/assets/img/imagem-padrao.png`
-const DEFAULT_DESCRIPTION = 'Sociedade Unipessoal de Advocacia — Defesa Criminal, Previdenciário, Trabalhista e Cível em Roraima.'
+const DEFAULT_DESCRIPTION = 'Bruno Dantas é pré-candidato a Deputado Estadual por Roraima nas eleições de 2026. Conheça sua história, propostas e junte-se ao movimento por um Roraima mais justo.'
 
 function setMeta(attr, key, value) {
   if (!value) return
