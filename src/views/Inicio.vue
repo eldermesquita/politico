@@ -1,6 +1,5 @@
 <script setup>
 
-import QuemSomos from "@/views/Advogados.vue";
 
 defineOptions({
   name: 'InicioHome',
@@ -9,200 +8,23 @@ import {nextTick, onMounted} from "vue";
 import AOS from 'aos'
 import $ from "@/assets/js/jquery-global.js";
 import 'magnific-popup';
-import imagesLoaded from 'imagesloaded';
 import 'jquery-waypoints/waypoints.js';
 import Swiper from "swiper";
+import imagesLoaded from 'imagesloaded';
 
 imagesLoaded.makeJQueryPlugin($);
 
+
+import SobreMe from "@components/layouts/site/SobreMe.vue";
 import SlideInicio from "@/components/layouts/site/SlideInicio.vue";
 import NoticiaDestaque from "@/components/layouts/site/NoticiaDestaque.vue";
+
 
 onMounted(async () => {
   try {
     await nextTick()
     AOS.refresh()
 
-
-    /*---------- 01. On Load Function ----------*/
-    $(globalThis).on("load", function () {
-      $(".preloader").fadeOut();
-    });
-
-    /*---------- 02. Preloader ----------*/
-    if ($(".preloader").length > 0) {
-      $(".preloaderCls").each(function () {
-        $(this).on("click", function (e) {
-          e.preventDefault();
-          $(".preloader").css("display", "none");
-        });
-      });
-    }
-
-    /*---------- 03. Mobile Menu ----------*/
-    $.fn.thmobilemenu = function (options) {
-      var opt = $.extend(
-        {
-          menuToggleBtn: ".th-menu-toggle",
-          bodyToggleClass: "th-body-visible",
-          subMenuClass: "th-submenu",
-          subMenuParent: "menu-item-has-children",
-          thSubMenuParent: "th-item-has-children",
-          subMenuParentToggle: "th-active",
-          meanExpandClass: "th-mean-expand",
-          appendElement: '<span class="th-mean-expand"></span>',
-          subMenuToggleClass: "th-open",
-          toggleSpeed: 400,
-        },
-        options
-      );
-
-      return this.each(function () {
-        var menu = $(this); // Select menu
-
-        // Menu Show & Hide
-        function menuToggle() {
-          menu.toggleClass(opt.bodyToggleClass);
-
-          // collapse submenu on menu hide or show
-          var subMenu = "." + opt.subMenuClass;
-          $(subMenu).each(function () {
-            if ($(this).hasClass(opt.subMenuToggleClass)) {
-              $(this).removeClass(opt.subMenuToggleClass);
-              $(this).css("display", "none");
-              $(this).parent().removeClass(opt.subMenuParentToggle);
-            }
-          });
-        }
-
-        // Class Set Up for every submenu
-        menu.find("." + opt.subMenuParent).each(function () {
-          var submenu = $(this).find("ul");
-          submenu.addClass(opt.subMenuClass);
-          submenu.css("display", "none");
-          $(this).addClass(opt.subMenuParent);
-          $(this).addClass(opt.thSubMenuParent); // Add th-item-has-children class
-          $(this).children("a").append(opt.appendElement);
-        });
-
-        // Toggle Submenu
-        function toggleDropDown($element) {
-          var submenu = $element.children("ul");
-          if (submenu.length > 0) {
-            $element.toggleClass(opt.subMenuParentToggle);
-            submenu.slideToggle(opt.toggleSpeed);
-            submenu.toggleClass(opt.subMenuToggleClass);
-          }
-        }
-
-        // Submenu toggle Button
-        var itemHasChildren = "." + opt.thSubMenuParent + " > a";
-        $(itemHasChildren).each(function () {
-          $(this).on("click", function (e) {
-            e.preventDefault();
-            toggleDropDown($(this).parent());
-          });
-        });
-
-        // Menu Show & Hide On Toggle Btn click
-        $(opt.menuToggleBtn).each(function () {
-          $(this).on("click", function () {
-            menuToggle();
-          });
-        });
-
-        // Hide Menu On outside click
-        menu.on("click", function (e) {
-          e.stopPropagation();
-          menuToggle();
-        });
-
-        // Stop Hide full menu on menu click
-        menu.find("div").on("click", function (e) {
-          e.stopPropagation();
-        });
-      });
-    };
-
-    $(".th-menu-wrapper").thmobilemenu();
-
-    /*---------- 04. Sticky fix ----------*/
-    $(globalThis).scroll(function () {
-      var topPos = $(this).scrollTop();
-      if (topPos > 500) {
-        $('.sticky-wrapper').addClass('sticky');
-        $('.category-menu').addClass('close-category');
-      } else {
-        $('.sticky-wrapper').removeClass('sticky')
-        $('.category-menu').removeClass('close-category');
-      }
-    })
-
-    $(".menu-expand").each(function () {
-      $(this).on("click", function (e) {
-        e.preventDefault();
-        $('.category-menu').toggleClass('open-category');
-      });
-    });
-
-    /*----------- One Page Nav ----------*/
-    function onePageNav(element) {
-      if ($(element).length > 0) {
-        $(element).each(function () {
-          var link = $(this).find('a');
-          $(this).find(link).each(function () {
-            $(this).on('click', function () {
-              var target = $(this.getAttribute('href'));
-              if (target.length) {
-                event.preventDefault();
-                $('html, body').stop().animate({
-                  scrollTop: target.offset().top - 10
-                }, 1000);
-              }
-              ;
-
-            });
-          });
-        })
-      }
-    };
-    onePageNav('.onepage-nav');
-    onePageNav('.scroll-down');
-
-    /*---------- 05. Scroll To Top ----------*/
-    if ($('.scroll-top').length > 0) {
-
-      var scrollTopbtn = document.querySelector('.scroll-top');
-      var progressPath = document.querySelector('.scroll-top path');
-      var pathLength = progressPath.getTotalLength();
-      progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
-      progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
-      progressPath.style.strokeDashoffset = pathLength;
-      progressPath.getBoundingClientRect();
-      progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
-      var updateProgress = function () {
-        var scroll = $(globalThis).scrollTop();
-        var height = $(document).height() - $(globalThis).height();
-        var progress = pathLength - (scroll * pathLength / height);
-        progressPath.style.strokeDashoffset = progress;
-      }
-      updateProgress();
-      $(globalThis).scroll(updateProgress);
-      var offset = 50;
-      var duration = 750;
-      $(globalThis).on('scroll', function () {
-        if ($(this).scrollTop() > offset) {
-          $(scrollTopbtn).addClass('show');
-        } else {
-          $(scrollTopbtn).removeClass('show');
-        }
-      });
-      $(scrollTopbtn).on('click', function (event) {
-        event.preventDefault();
-        $('html, body').animate({scrollTop: 0}, duration);
-        return false;
-      })
-    }
 
     /*---------- 06. Set Background Image Color & Mask ----------*/
     if ($("[data-bg-src]").length > 0) {
@@ -950,14 +772,13 @@ onMounted(async () => {
     console.error('Erro ao carregar o noticias ', error)
   }
 })
-
+import video2 from '@assets/videos/2.mp4'
 
 </script>
 
 <template>
   <SlideInicio/>
-  <QuemSomos/>
-
+  <SobreMe/>
   <!--==============================
   Service Area
   ==============================-->
@@ -982,7 +803,7 @@ onMounted(async () => {
         <div class="row justify-content-center">
           <div class="col-lg-7">
             <div class="title-area text-center">
-              <span class="sub-title after-none before-none">Propostas</span>
+              <span class="sub-title after-none before-none">Bandeira</span>
               <h2 class="sec-title">O que Bruno vai defender.</h2>
             </div>
           </div>
@@ -990,46 +811,93 @@ onMounted(async () => {
         <div class="row gy-30 gx-30 justify-content-center">
           <div class="col-xl-4 col-md-6">
             <div class="service-card style2">
-              <div class="box-thumb">
+<!--              <div class="box-thumb">
                 <img src="@assets/img/service/service_card_1_1.png" alt="img">
-              </div>
+              </div>-->
               <div class="box-icon">
-                <img src="@assets/img/icon/service-icon/service-card-icon1-1.svg" alt="Icon">
+                <img src="@assets/img/hero/hero-bg-shape2-7.png" alt="Icon" width="60px">
               </div>
               <div class="box-content">
-                <h3 class="box-title"><a href="#">Emprego & Renda</a></h3>
-                <p class="box-text">Criar ambiente favorável ao empreendedorismo, desburocratizar e incentivar micro e pequenas empresas para gerar mais empregos em Roraima.</p>
-                <a href="#" class="th-btn">Saiba Mais<i class="fas fa-play ms-2"></i></a>
+                <h3 class="box-title"><a href="#">Geração de Emprego e Renda</a></h3>
+                <p class="box-text">Valorizar quem produz, trabalha e empreende, estimulando iniciativas que ampliem vagas de emprego e movimentem a economia local.</p>
+<!--                <a href="#" class="th-btn">Saiba Mais<i class="fas fa-play ms-2"></i></a>-->
               </div>
             </div>
           </div>
           <div class="col-xl-4 col-md-6">
             <div class="service-card style2">
-              <div class="box-thumb">
+<!--              <div class="box-thumb">
                 <img src="@assets/img/service/service_card_1_2.png" alt="img">
-              </div>
+              </div>-->
               <div class="box-icon">
                 <img src="@assets/img/icon/service-icon/service-card-icon1-2.svg" alt="Icon">
               </div>
               <div class="box-content">
                 <h3 class="box-title"><a href="#">Educação</a></h3>
                 <p class="box-text">Defender escolas de qualidade, formação técnica e profissional, bolsas de estudo e acesso ao ensino superior para a juventude roraimense.</p>
-                <a href="#" class="th-btn">Saiba Mais<i class="fas fa-play ms-2"></i></a>
+
               </div>
             </div>
           </div>
           <div class="col-xl-4 col-md-6">
             <div class="service-card style2">
-              <div class="box-thumb">
+<!--              <div class="box-thumb">
                 <img src="@assets/img/service/service_card_1_3.png" alt="img">
-              </div>
+              </div>-->
               <div class="box-icon">
                 <img src="@assets/img/icon/service-icon/service-card-icon1-3.svg" alt="Icon">
               </div>
               <div class="box-content">
                 <h3 class="box-title"><a href="#">Saúde Pública</a></h3>
                 <p class="box-text">Ampliar UBSs no interior, garantir médicos nas comunidades mais remotas, e fiscalizar o investimento em saúde para que cada roraimense tenha atendimento digno.</p>
-                <a href="#" class="th-btn">Saiba Mais<i class="fa fa-arrow-up-right ms-2"></i></a>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-4 col-md-6">
+            <div class="service-card style2">
+<!--              <div class="box-thumb">
+                <img src="@assets/img/service/service_card_1_3.png" alt="img">
+              </div>-->
+              <div class="box-icon">
+<!--                <img src="@assets/img/icon/service-icon/service-card-icon1-3.svg" alt="Icon">-->
+              </div>
+              <div class="box-content">
+                <h3 class="box-title"><a href="#">Desenvolvimento Econômico</a></h3>
+                <p class="box-text">Defender políticas que incentivem o empreendedorismo, fortaleçam pequenos negócios e criem oportunidades para quem deseja investir e gerar empregos em Roraima..</p>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-4 col-md-6">
+            <div class="service-card style2">
+<!--              <div class="box-thumb">
+                <img src="@assets/img/service/service_card_1_3.png" alt="img">
+              </div>-->
+              <div class="box-icon">
+<!--                <img src="@assets/img/icon/service-icon/service-card-icon1-3.svg" alt="Icon">-->
+              </div>
+              <div class="box-content">
+                <h3 class="box-title"><a href="#">Desenvolvimento Regional Sustentável</a></h3>
+                <p class="box-text">Defender crescimento econômico aliado à responsabilidade ambiental, valorizando o potencial produtivo da região Norte de forma sustentável.</p>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-6">
+            <div class="service-card style2">
+<!--              <div class="box-thumb">
+                <img src="@assets/img/service/service_card_1_3.png" alt="img">
+              </div>-->
+              <div class="box-icon">
+<!--                <img src="@assets/img/icon/service-icon/service-card-icon1-3.svg" alt="Icon">-->
+              </div>
+              <div class="box-content">
+                <h3 class="box-title"><a href="#">Juventude e Oportunidade</a></h3>
+                <p class="box-text">Criar caminhos para que jovens tenham acesso à qualificação, ao primeiro emprego e ao incentivo para empreender..</p>
+
               </div>
             </div>
           </div>
@@ -1049,34 +917,18 @@ onMounted(async () => {
       <div class="row gy-40 gx-80 justify-content-between">
         <div class="col-xl-6">
           <div class="title-area mb-35">
-            <span class="sub-title after-none before-none">Make a Donations </span>
-            <h2 class="sec-title text-white">Give Time, Change Lives
-              Become a Donate Now</h2>
-            <p class="text-light">Volunteers are the heart of our organization. Join our team to make a hands-on
-              difference in your community. Whether you have a few hours or a few days, your time and skills
-              can help us achieve our goals.</p>
+            <span class="sub-title after-none before-none">Negócio e Política </span>
+            <h2 class="sec-title text-white">Participe</h2>
+            <p class="text-light">A construção de um estado mais forte acontece com diálogo, participação e união. </p>
           </div>
           <div class="donation-card style2">
-            <div class="box-thumb">
+<!--            <div class="box-thumb">
               <img src="@assets/img/donation/donation2-1.png" alt="image">
-            </div>
+            </div>-->
             <div class="box-content">
-              <h3 class="box-title"><a href="blog-details.html">Big charity: build school for poor
-                children</a></h3>
-              <p>Stay informed about our upcoming events and campaigns.</p>
-              <div class="donation-card_progress-wrap">
-                <div class="progress">
-                  <div class="progress-bar" style="width: 85%;">
-                    <div class="progress-value">85%</div>
-                  </div>
-                </div>
-                <div class="donation-card_progress-content">
-                  <span class="donation-card_raise">$5,00.00 Raised</span>
-                  <span class="donation-card_goal text-theme2">Goal - $10,00.00</span>
-                </div>
-              </div>
-              <a href="blog-details.html" class="th-btn style6">Donate Now <i
-                class="fas fa-play ms-2"></i></a>
+              <h3 class="box-title"><a href="#"> Este espaço foi criado para aproximar pessoas que acreditam no desenvolvimento de Roraima, na valorização do trabalho e na geração de oportunidades.</a></h3>
+              <p> Juntos, podemos fortalecer boas ideias e construir novos caminhos para o nosso estado.</p>
+
             </div>
           </div>
         </div>
@@ -1084,8 +936,9 @@ onMounted(async () => {
           <div class="video-thumb2-1 video-box-center">
             <img src="@assets/img/normal/video-thumb2-1.png" alt="img">
             <h2 class="video-title">Negócio e Política</h2>
-            <a href="assets/videos/2.mp4" class="play-btn style5 popup-video"><i
-              class="fa-sharp fa-solid fa-play"></i></a>
+            <a :href="video2" class="play-btn style5 popup-video">
+              <i class=" fas fa-play" style="width: 100px; height: 100px; margin-left: 32px !important;
+    margin-top: 28px;"></i></a>
 
 
           </div>
@@ -1097,5 +950,7 @@ onMounted(async () => {
   <keep-alive>
     <NoticiaDestaque/>
   </keep-alive>
+
+
 
 </template>

@@ -1,20 +1,10 @@
 <script setup>
 import {nextTick, onMounted} from 'vue'
 import {RouterLink} from 'vue-router'
-import AOS from 'aos'
 
-import $ from 'jquery'
+import {useContato} from '@/composable/useContato'
 
-globalThis.$ = globalThis.jQuery = $
-
-
-onMounted(async () => {
-
-    await nextTick()
-    AOS.refresh()
-
-  }
-)
+const {openContact, openSupport} = useContato()
 </script>
 
 <template>
@@ -51,7 +41,7 @@ onMounted(async () => {
                       <i class="fal fa-phone"></i>
                     </div>
                     <div class="box-content">
-                      <p class="box-text">Telefone:</p>
+                      <p class="box-text">WhatsApp:</p>
                       <h4 class="box-title"><a href="tel:+55 95 8429-0606">+55 95 8429-0606</a></h4>
                     </div>
                   </div>
@@ -61,7 +51,7 @@ onMounted(async () => {
                     </div>
                     <div class="box-content">
                       <p class="box-text">Email:</p>
-                      <h4 class="box-title"><a href="mailto:info@brunodantasrr.com.br">info@brunodantasrr.com.br</a></h4>
+                      <h4 class="box-title"><a href="mailto:contatos@brunodantasrr.com.br">contatos@brunodantasrr.com.br</a></h4>
                     </div>
                   </div>
                 </div>
@@ -94,9 +84,9 @@ onMounted(async () => {
                 </p>
 
                 <div class="th-social style6">
-                  <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                  <a href="https://www.twitter.com/"><i class="fab fa-instagram"></i></a>
-                  <a href="https://www.twitter.com/"><i class="fab fa-whatsapp"></i></a>
+                  <a href="https://www.threads.com/@brunodantasrr?xmt=AQG0oKEexpdQIUY6GtOjZ9WD8bcbrKD4fQ1-PxJvC4N4xKA"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://www.instagram.com/brunodantasrr/reels/" target="_blank"><i class="fab fa-instagram"></i></a>
+                  <a href="javascript:void(0); " @click.prevent="openSupport"  target="_blank"><i class="fab fa-whatsapp"></i></a>
 
                 </div>
               </div>
@@ -110,8 +100,8 @@ onMounted(async () => {
             <router-link :to="`/`">
              Bruno Dantas
             </router-link>
-
             — Deputado Estadual por Roraima |
+            Material de pré-candidatura. CNPJ/CPF do candidato — Partido: MDB |
             Desenvolvido com
             <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' class='svg-inline--fa fa-heart fa-w-16'>
               <path fill='currentColor'
@@ -127,7 +117,6 @@ onMounted(async () => {
             By <a href="javascript:void(0); " style="color:#FFFFFF" onclick="window.open('http://www.eldermesquita.com.br/');"> e-design </a>
 
 
-            Material de pré-candidatura. CNPJ/CPF do candidato — Partido: MDB
           </p>
         </div>
       </div>
@@ -136,24 +125,11 @@ onMounted(async () => {
 
   </div>
 
-  <!--********************************
-    Code End  Here
-******************************** -->
-
-  <!-- Scroll To Top -->
-  <!--  <div class="scroll-top">
-      <i class="fab fa-arrow-up"></i>
-
-      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
-      </svg>
-    </div>-->
   <!-- Scroll To Top -->
   <div class="scroll-top">
     <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
       <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
             style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
-        <!--      <i class="fas fa-arrow-up"></i>-->
       </path>
     </svg>
   </div>

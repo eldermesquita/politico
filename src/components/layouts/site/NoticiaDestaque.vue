@@ -1,14 +1,18 @@
 <script setup>
-import {nextTick, onMounted} from "vue";
-import AOS from 'aos'
+import {nextTick, onMounted, ref} from "vue";
+import noticiasData from "@/dados/noticias.json";
 
+const noticias = ref([]);
+
+const selecionarNoticiasAleatorias = () => {
+  const shuffled = [...noticiasData].sort(() => 0.5 - Math.random());
+  noticias.value = shuffled.slice(0, 5);
+};
 
 onMounted(async () => {
   try {
+    selecionarNoticiasAleatorias();
     await nextTick()
-
-
-    AOS.refresh()
 
   } catch (error) {
     console.error('Erro ao carregar o noticias ', error)
@@ -33,151 +37,31 @@ onMounted(async () => {
       <div class="slider-area">
         <div class="swiper th-slider has-shadow" id="blogSlider2"
              data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"}}}'>
+
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            <div class="swiper-slide" v-for="noticia in noticias" :key="noticia.id">
               <div class="blog-card">
                 <div class="blog-img">
-                  <a href="#">
-                    <div class="blog-img-shape1"
-                         data-mask-src="assets/img/blog/blog-card-bg-shape1-2.png"></div>
-                    <img src="@assets/img/blog/blog_1_1.jpg" alt="image">
+                  <a :href="noticia.fonte" target="_blank">
+                    <div class="blog-img-shape1" data-mask-src="assets/img/blog/blog-card-bg-shape1-2.png"></div>
+<!--                    <img :src="noticia.imagem" :alt="noticia.titulo">-->
                   </a>
                 </div>
                 <div class="blog-content">
                   <div class="blog-card-shape"
-                       data-mask-src="assets/img/blog/blog-card-bg-shape1-1.png"></div>
-                  <div class="blog-meta">
-                    <a href="#"><i class="fas fa-calendar"></i>July 16, 2025</a>
-                    <a href="#"><i class="fas fa-tags"></i>Education</a>
+                       data-mask-src="assets/img/blog/blog-card-bg-shape1-1.png">
+
                   </div>
-                  <h3 class="box-title"><a href="#">See Your Impact: Transparent Donation
-                    Tracking</a></h3>
-                  <a href="#" class="th-btn">Leia Mais<i
+                  <div class="blog-meta">
+                    <a href="#"><i class="fas fa-calendar"></i>{{ noticia.data }}</a>
+                    <a href="#"><i class="fas fa-tags"></i>{{ noticia.categoria }}</a>
+                  </div>
+                  <h3 class="box-title"><a :href="noticia.fonte" target="_blank">{{ noticia.titulo }}</a></h3>
+                  <a :href="noticia.fonte" target="_blank" class="th-btn">Leia Mais<i
                     class="fas fa-play ms-2"></i></a>
                 </div>
               </div>
             </div>
-
-            <div class="swiper-slide">
-              <div class="blog-card">
-                <div class="blog-img">
-                  <a href="#">
-                    <div class="blog-img-shape1"
-                         data-mask-src="assets/img/blog/blog-card-bg-shape1-2.png"></div>
-                    <img src="@assets/img/blog/blog_1_2.jpg" alt="image">
-                  </a>
-                </div>
-                <div class="blog-content">
-                  <div class="blog-card-shape"
-                       data-mask-src="assets/img/blog/blog-card-bg-shape1-1.png"></div>
-                  <div class="blog-meta">
-                    <a href="#"><i class="fas fa-calendar"></i>March 24, 2025</a>
-                    <a href="#"><i class="fas fa-tags"></i>Education</a>
-                  </div>
-                  <h3 class="box-title"><a href="#">Every Contribution Counts: Make a
-                    Difference</a></h3>
-                  <a href="#" class="th-btn">Leia Mais<i
-                    class="fas fa-play ms-2"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="blog-card">
-                <div class="blog-img">
-                  <a href="#">
-                    <div class="blog-img-shape1"
-                         data-mask-src="assets/img/blog/blog-card-bg-shape1-2.png"></div>
-                    <img src="@assets/img/blog/blog_1_3.jpg" alt="image">
-                  </a>
-                </div>
-                <div class="blog-content">
-                  <div class="blog-card-shape"
-                       data-mask-src="assets/img/blog/blog-card-bg-shape1-1.png"></div>
-                  <div class="blog-meta">
-                    <a href="#"><i class="fas fa-calendar"></i>June 30, 2025</a>
-                    <a href="#"><i class="fas fa-tags"></i>Education</a>
-                  </div>
-                  <h3 class="box-title"><a href="#">Real Stories, Real Impact: Your
-                    Donations at Work</a></h3>
-                  <a href="#" class="th-btn">Leia Mais<i
-                    class="fas fa-play ms-2"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="blog-card">
-                <div class="blog-img">
-                  <a href="#">
-                    <div class="blog-img-shape1"
-                         data-mask-src="assets/img/blog/blog-card-bg-shape1-2.png"></div>
-                    <img src="@assets/img/blog/blog_1_1.jpg" alt="image">
-                  </a>
-                </div>
-                <div class="blog-content">
-                  <div class="blog-card-shape"
-                       data-mask-src="assets/img/blog/blog-card-bg-shape1-1.png"></div>
-                  <div class="blog-meta">
-                    <a href="#"><i class="fas fa-calendar"></i>July 16, 2025</a>
-                    <a href="#"><i class="fas fa-tags"></i>Education</a>
-                  </div>
-                  <h3 class="box-title"><a href="#">See Your Impact: Transparent Donation
-                    Tracking</a></h3>
-                  <a href="#" class="th-btn">Leia Mais<i
-                    class="fas fa-play ms-2"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="blog-card">
-                <div class="blog-img">
-                  <a href="#">
-                    <div class="blog-img-shape1"
-                         data-mask-src="assets/img/blog/blog-card-bg-shape1-2.png"></div>
-                    <img src="@assets/img/blog/blog_1_2.jpg" alt="Education">
-                  </a>
-                </div>
-                <div class="blog-content">
-                  <div class="blog-card-shape"
-                       data-mask-src="assets/img/blog/blog-card-bg-shape1-1.png"></div>
-                  <div class="blog-meta">
-                    <a href="#"><i class="fas fa-calendar"></i>March 24, 2025</a>
-                    <a href="#"><i class="fas fa-tags"></i>Education</a>
-                  </div>
-                  <h3 class="box-title"><a href="#">Every Contribution Counts: Make a
-                    Difference</a></h3>
-                  <a href="#" class="th-btn">Leia Mais<i
-                    class="fas fa-play ms-2"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="blog-card">
-                <div class="blog-img">
-                  <a href="#">
-                    <div class="blog-img-shape1"
-                         data-mask-src="assets/img/blog/blog-card-bg-shape1-2.png"></div>
-                    <img src="@assets/img/blog/blog_1_3.jpg" alt="blog">
-                  </a>
-                </div>
-                <div class="blog-content">
-                  <div class="blog-card-shape"
-                       data-mask-src="assets/img/blog/blog-card-bg-shape1-1.png"></div>
-                  <div class="blog-meta">
-                    <a href="#"><i class="fas fa-calendar"></i>June 30, 2025</a>
-                    <a href="#"><i class="fas fa-tags"></i>Education</a>
-                  </div>
-                  <h3 class="box-title"><a href="#">Real Stories, Real Impact: Your
-                    Donations at Work</a></h3>
-                  <a href="#" class="th-btn">Leia Mais<i
-                    class="fas fa-play ms-2"></i></a>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
         <button data-slider-prev="#blogSlider2" class="slider-arrow slider-prev"><i class="fas fa-arrow-left"></i>

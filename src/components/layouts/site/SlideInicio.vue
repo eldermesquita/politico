@@ -3,6 +3,7 @@ import {nextTick, onMounted} from "vue";
 import {useContato} from '@/composable/useContato'
 import AOS from 'aos'
 
+import video1 from '@assets/videos/1.mp4'
 import heroBg21 from '@assets/img/hero/hero-bg-shape2-1.png'
 import heroBg24 from '@assets/img/hero/hero-bg-shape2-4.png'
 import heroBg25 from '@assets/img/hero/hero-bg-shape2-5.png'
@@ -25,7 +26,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="th-hero-wrapper hero-2" id="hero" style="background-image: url('@assets/img/hero/hero_bg_2_1.png');"  data-overlay="gray">
+  <div class="th-hero-wrapper hero-2" id="hero" style="background-image: url('@assets/img/hero/hero_bg_2_1.png');" data-overlay="gray">
     <div class="shape-mockup hero-shape-2-1 jump" data-top="14%" data-left="5%">
       <div class="color-masking">
         <div class="masking-src bg-mask" data-mask-src="assets/img/hero/hero-bg-shape2-1.png"></div>
@@ -59,40 +60,38 @@ onMounted(async () => {
     <div class="shape-mockup hero-shape-2-9" data-bottom="0%" data-left="0%" data-right="0">
       <img src="@assets/img/hero/hero-bg-shape2-9.png" alt="shape">
     </div>
-        <div class="container">
-          <div class="row gx-40 align-items-center flex-row-reverse">
-            <div class="col-lg-6">
-              <div class="hero-2-img">
-                <img src="@assets/img/hero/hero_thumb_1_1.png" alt="Por Roraima">
-                <div class="hero-2-shape" data-mask-src="assets/img/hero/hero-thumb-shape2-1.png"></div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="hero-style2">
-                <span class="sub-title after-none animate__rotateOutDownRight">Pré-candidato Deputado Estadual</span>
-                <h1 class="hero-title">
+    <div class="container">
+      <div class="row gx-40 align-items-center flex-row-reverse">
+        <div class="col-lg-6">
+          <div class="hero-2-img">
+            <img src="@assets/img/hero/hero_thumb_1_1.png" alt="Por Roraima">
+            <div class="hero-2-shape" data-mask-src="assets/img/hero/hero-thumb-shape2-1.png"></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="hero-style2">
+            <span class="sub-title after-none animate__rotateOutDownRight">Pré-candidato Deputado Estadual</span>
+            <h1 class="hero-title">
                                     <span class="title1">Bruno<span class="text-theme2">Dantas</span>
                                         <div class="color-masking shake d-inline-flex">
                                        <div class="masking-src" data-mask-src="assets/img/icon/service-icon/service-card-icon1-2.svg"></div>
                                         <img src="@assets/img/icon/service-icon/service-card-icon1-2.svg" height="100px" alt="Educação">
                                         </div>
                                     </span>
-                </h1>
-                <p class="hero-text">Entre planos e caminhos, uma certeza: o propósito de Deus sempre prevalece. Seguimos confiando, trabalhando e fazendo a nossa parte. </p>
-                <div class="btn-wrap">
-                  <a href="#" class="th-btn"> Conheça as Propostas<i
-                    class="fas fa-arrow-right  ms-2 "></i></a>
-                  <a href="@assets/videos/1.mp4" class="play-btn style3 popup-video">
-                    <i class="fas fa-play fa-beat  "></i>
+            </h1>
+            <p class="hero-text">Entre planos e caminhos, uma certeza: o propósito de Deus sempre prevalece. Seguimos confiando, trabalhando e fazendo a nossa parte. </p>
+            <div class="btn-wrap">
+              <a href="#" class="th-btn"> Conheça as Propostas<i
+                class="fas fa-arrow-right  ms-2 "></i></a>
 
-                  </a>
+                <a :href="video1" class="play-btn style5 popup-video">
+                  <i class=" fas fa-play" style="width: 113px; height: 61px; margin-top: 16px;"></i></a>
 
-
-                </div>
-              </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
   </div>
 </template>
 

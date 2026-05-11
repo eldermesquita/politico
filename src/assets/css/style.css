@@ -2957,8 +2957,8 @@ textarea.is-invalid {
 }
 
 .play-btn.style5 {
-  --icon-size: 56px;
-  --icon-font-size: 16px;
+  width: 100px;
+  height: 100px;
 }
 
 .play-btn.style5 > i {
@@ -20762,8 +20762,8 @@ span.select2-selection.select2-selection--single:focus {
 }
 
 .video-thumb2-1 .play-btn {
-  --icon-size: 100px;
-  --icon-font-size: 24px;
+  width: 158px;
+  height: 158px;
   /* Extra small devices */
 }
 

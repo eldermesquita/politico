@@ -1,6 +1,6 @@
 export function useContato() {
-  const whatsappNumber = '5595981083779'
-  const WHATSAPP_NUMBER = '5595999999999'
+  const whatsappNumber = '+559584290606'
+  const WHATSAPP_NUMBER = '+559584290606'
   const defaultMessage = 'Olá, gostaria de mais informações.'
 
   const sendMessage = (message = '') => {

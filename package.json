@@ -1,16 +1,18 @@
 {
-  "name": "adv",
-  "version": "0.0.0",
+  "name": "politico",
+  "version": "0.0.1",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:analyze": "vite build --mode analyze",
     "preview": "vite preview",
-    "lint": "run-s lint:*",
-    "lint:oxlint": "oxlint . --fix",
-    "lint:eslint": "eslint . --fix --cache",
-    "format": "oxfmt src/",
+    "lint": "eslint \"src/**/*.{vue,js,ts}\"",
+    "lint:fix": "eslint \"src/**/*.{vue,js,ts}\" --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "coverage": "vitest run --coverage",
     "clean": "rimraf node_modules dist",
     "reinstall": "npm run clean && npm install"
   },
@@ -39,18 +41,17 @@
   "devDependencies": {
     "@eslint/js": "^9.39.2",
     "@vitejs/plugin-vue": "^6.0.4",
-    "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-oxlint": "~1.46.0",
     "eslint-plugin-vue": "~10.8.0",
     "mmenu-js": "^9.3.0",
     "npm-run-all2": "^8.0.4",
-    "oxfmt": "^0.32.0",
-    "oxlint": "~1.47.0",
     "vite": "beta",
     "vite-plugin-vue-devtools": "^8.0.6",
     "globals": "^17.4.0",
+    "eslint": "^10.0.3",
+    "prettier": "^3.8.1",
+    "@vitest/coverage-v8": "^4.1.5",
     "rimraf": "^6.1.3"
   }
-
 }
